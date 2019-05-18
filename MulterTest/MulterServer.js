@@ -2,7 +2,8 @@ const express = require('express');
 const multer = require('multer');
 const path = require("path");
 const fs = require("fs");
-const PORT = 3000;
+
+var PORT = process.env.PORT || 3000;
 const upload = multer({
   dest: 'uploads/' // this saves your file into a directory called "uploads"
 }); 

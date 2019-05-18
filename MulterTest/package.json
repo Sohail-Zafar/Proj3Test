@@ -1,0 +1,11 @@
+{
+  "name": "multertest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MulterServer.js",
+  "scripts": {
+    "start": "node MulterServer.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
