@@ -31,7 +31,7 @@ app.post('/', upload.single('file-to-upload'), (req, res) => {
        .contentType("text/plain")
        .end("File uploaded!");
       
-       cloudinaryTest();
+       cloudinaryTest(req.file.originalname);
       }
      
     ) }
@@ -48,7 +48,7 @@ app.post('/', upload.single('file-to-upload'), (req, res) => {
 }
 );
 
-function cloudinaryTest(){
+function cloudinaryTest(originalFileName){
 // var fs = require('fs');
 var cloudinary = require('cloudinary').v2;
 
@@ -67,7 +67,7 @@ cloudinary.config({
 console.log( "** ** ** ** ** ** ** ** ** Uploads ** ** ** ** ** ** ** ** ** **");
 
 // File upload
-cloudinary.uploader.upload('uploads/test1.png',{tags:'basic_sample'},function(err,image){
+cloudinary.uploader.upload('uploads/' + originalFileName,{tags:'basic_sample'},function(err,image){
   console.log();
   console.log("** File Upload");
   if (err){ console.warn(err);}
