@@ -21,7 +21,7 @@ app.post('/', upload.single('file-to-upload'), (req, res) => {
   const targetPath = path.join(__dirname, "./uploads/" + req.file.originalname);
   console.log(req.file.originalname);
   if( (path.extname(req.file.originalname).toLowerCase() === ".png") ||
-    (path.extname(req.file.originalname).toLowerCase() === ".jpeg")  )
+    (path.extname(req.file.originalname).toLowerCase() === ".jpg")  )
   {
     fs.rename(tempPath, targetPath, err => {
       if (err) return handleError(err, res);
